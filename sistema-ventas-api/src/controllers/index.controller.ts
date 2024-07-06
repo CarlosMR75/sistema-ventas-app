@@ -1,21 +1,23 @@
 import { Request, Response } from "express";
 import prisma from "../database/database";
+import { utils } from "../utils/utils";
 
 class IndexController {
 
     public async index(req: Request, res: Response){
         try {
-            const usuarios = await prisma.usuario.findMany();
-            const newUser = await prisma.usuario.create({
-                data: {
-                  nombre: "Carlos",
-                  apellidos: "Mata",
-                  username: "carlos",
-                  password: "linux",
-                },
-              })
-            console.log(newUser);
-            res.json({message: usuarios});
+            // const user = {
+            //     cveusuario: 1,
+            //     nombre: 'Carlos',
+            //     rol: [1,2,3]
+            // }
+            // const token = utils.generateJWT(user);
+
+            // var jwt = token;
+            // var data = utils.getPayload(jwt);
+            // console.log(token);
+            // console.log(data);
+            res.json({message: 'API Works'});
         } catch (error: any) {
             return res.status(500).json({message: `Error: ${error.message}`});
         }
