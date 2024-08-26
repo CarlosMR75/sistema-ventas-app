@@ -25,6 +25,8 @@ class IndexController {
 
     public insert(req: Request, res: Response){
         try {
+            const user = req.body;
+            console.log(user);
             res.json({message: "Insert Works"});
         } catch (error: any) {
             return res.status(500).json({message: `Error: ${error.message}`});
