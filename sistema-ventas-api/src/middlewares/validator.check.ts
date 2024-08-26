@@ -5,7 +5,7 @@ export const validate = (req: Request, res: Response, next: NextFunction) => {
     console.log("Init Middleware :: Validator Check");
     // * Se obtiene los errores del request original de la peticion
     const errors = validationResult(req)
-
+    
     // * Si no existen errores la petición continua 
     if(errors.isEmpty()) return next();
 

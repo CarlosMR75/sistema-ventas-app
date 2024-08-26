@@ -1,0 +1,25 @@
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="push">
+        <ol>
+            <app-sidebar (closeSidebar)="sidenav.close()"></app-sidebar>
+        </ol>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-header (toogleSidenav)="sidenav.toggle()"></app-header>
+        <router-outlet />
+        <app-footer></app-footer>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- <ngx-spinner
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  template="<img src='https://media.tenor.com/KH-EXUKEh2UAAAAi/katana-zero-zero.gif' />"
+>
+  <p style="font-size: 20px; color: white; margin-top: 100px">
+    Cargando
+  </p>
+</ngx-spinner> -->
+
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" type = "ball-atom" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
